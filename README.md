@@ -32,7 +32,7 @@ Install dependencies:
 ```bash
 pip install scapy
 ```
-
+Note: sudo is required to run the scanner as Scapy needs raw socket access for OS detection.
 ---
 
 ## Usage
