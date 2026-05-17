@@ -8,13 +8,13 @@ A custom TCP port scanner with service fingerprinting and OS detection, built in
 
 The scanner operates across five modules:
 
-**Scanning** -- uses Python's native asyncio `open_connection()` to perform concurrent TCP connect scans across a port range. A semaphore limits concurrency to avoid overwhelming the target.
+**Scanning** - uses Python's native asyncio `open_connection()` to perform concurrent TCP connect scans across a port range. A semaphore limits concurrency to avoid overwhelming the target.
 
-**Service Fingerprinting** -- for each open port, the scanner attempts to grab the service banner by reading the initial response. For HTTP ports (80, 8080) it sends a GET request first to prompt a response.
+**Service Fingerprinting** - for each open port, the scanner attempts to grab the service banner by reading the initial response. For HTTP ports (80, 8080) it sends a GET request first to prompt a response.
 
-**OS Detection** -- sends an ICMP echo request using Scapy and reads the TTL value from the response. Different operating systems use different default TTL values: Linux uses 64, Windows uses 128, and Cisco devices use 255.
+**OS Detection** - sends an ICMP echo request using Scapy and reads the TTL value from the response. Different operating systems use different default TTL values: Linux uses 64, Windows uses 128, and Cisco devices use 255.
 
-**Reporting** -- results are output to the terminal in a structured format, or written to a file if specified.
+**Reporting** - results are output to the terminal in a structured format, or written to a file if specified.
 
 ---
 
