@@ -9,7 +9,7 @@ def validate_ip(ip): #validates IPs
 
 def validate_ports(port_string): #checks format legitimacy of port range inputs
     port_numbers = port_string.split("-")
-    if len(port_numbers)!=2:
+    if len(port_numbers)!=2:       
         raise ValueError("improper port input syntax: port must include 2 numbers")
     else:
         if port_numbers[0].isdigit() and port_numbers[1].isdigit():
@@ -22,5 +22,18 @@ def validate_ports(port_string): #checks format legitimacy of port range inputs
                     return True
                 else:
                     raise ValueError("ports not in possible port range")
+        else:
+            raise ValueError("port input must be numeric")
+
+
+def parse_ports(port_string):
+    port_numbers = port_string.split("-")
+    if len(port_numbers)!=2:
+        raise ValueError("improper port input syntax: port must include 2 numbers")
+    else:
+        if port_numbers[0].isdigit() and port_numbers[1].isdigit():
+            port_numbers[0] = int(port_numbers[0])
+            port_numbers[1] = int(port_numbers[1])
+            return port_numbers[0], port_numbers[1]
         else:
             raise ValueError("port input must be numeric")
