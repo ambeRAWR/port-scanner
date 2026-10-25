@@ -1,10 +1,8 @@
 # Port Scanner
 
-A custom TCP port scanner with service fingerprinting and OS detection, built in Python. This project was built from scratch to demonstrate understanding of low-level networking concepts including the TCP handshake, raw packet crafting, async concurrency, and service banner grabbing.
+A custom TCP port scanner with service fingerprinting and OS detection, built in Python.
 
 ---
-
-## How It Works
 
 The scanner operates across five modules:
 
