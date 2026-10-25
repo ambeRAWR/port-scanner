@@ -2,8 +2,6 @@
 
 A custom TCP port scanner with service fingerprinting and OS detection, built in Python.
 
----
-
 The scanner operates across five modules:
 
 **Scanning** - uses Python's native asyncio `open_connection()` to perform concurrent TCP connect scans across a port range. A semaphore limits concurrency to avoid overwhelming the target.
